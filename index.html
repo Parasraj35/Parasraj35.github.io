@@ -441,6 +441,7 @@ const DEFAULT_PROJECTS = [
 
 {
   id: "hisab",
+  mobile: true,
   title: "HISAB — Offline Personal Finance Tracker",
   terminal: "$ flutter build apk --release\n====================\n✔ Local SQLite Storage\n✔ Biometric App Lock\n✔ Zero Network Calls\n✔ Negative-Balance Guard\n✔ Build Successful",
   desc: "HISAB is a fully offline personal finance tracker for Android, built in Flutter — every transaction, balance, and debt lives in an on-device SQLite database, with zero backend and zero network calls for financial data. • Balance Integrity: account balances are enforced through atomic database transactions, making it structurally impossible for a balance to go negative. • Local-First Auth: phone + password login with bcrypt hashing, no server — the whole session lives on-device. • App Lock: PIN and biometric unlock gated by real Android lifecycle events (not navigation), with a configurable auto-lock timer. • Full Feature Set: multi-account tracking, categorized transactions, debt/lending with partial payments, savings goals, and PDF/CSV report exports. • Monetization: Google AdMob integration with a full EU/UK GDPR consent flow (Google UMP).",
@@ -623,7 +624,7 @@ function renderWorkGrid(){
     const cmdLine = cmd ? `<div class="work-cmd">${escapeHtml(cmd.replace(/^\$\s*/, ''))}</div>` : '';
     return `
       <div class="work-card">
-        <div class="work-thumb">${thumb}${badge}</div>
+        <div class="work-thumb${p.mobile ? ' is-mobile' : ''}">${thumb}${badge}</div>
         <div class="work-body">
           ${cmdLine}
           <div class="work-title">${escapeHtml(p.title)}</div>
@@ -671,6 +672,7 @@ function openProject(i){
   document.getElementById('project-modal-links').innerHTML = (p.links || []).map((l, idx) =>
     `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener" class="${idx > 0 ? 'secondary' : ''}">${escapeHtml(l.label)}</a>`
   ).join('') || '';
+  document.getElementById('project-carousel').classList.toggle('is-mobile', !!p.mobile);
   buildCarousel(p.images);
   document.getElementById('project-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
