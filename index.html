@@ -438,7 +438,37 @@ form.addEventListener('submit', async (e) => {
 
 /* ---------- PROJECTS: default data + localStorage override ---------- */
 const DEFAULT_PROJECTS = [
-  
+
+{
+  id: "hisab",
+  title: "HISAB — Offline Personal Finance Tracker",
+  terminal: "$ flutter build apk --release\n====================\n✔ Local SQLite Storage\n✔ Biometric App Lock\n✔ Zero Network Calls\n✔ Negative-Balance Guard\n✔ Build Successful",
+  desc: "HISAB is a fully offline personal finance tracker for Android, built in Flutter — every transaction, balance, and debt lives in an on-device SQLite database, with zero backend and zero network calls for financial data. • Balance Integrity: account balances are enforced through atomic database transactions, making it structurally impossible for a balance to go negative. • Local-First Auth: phone + password login with bcrypt hashing, no server — the whole session lives on-device. • App Lock: PIN and biometric unlock gated by real Android lifecycle events (not navigation), with a configurable auto-lock timer. • Full Feature Set: multi-account tracking, categorized transactions, debt/lending with partial payments, savings goals, and PDF/CSV report exports. • Monetization: Google AdMob integration with a full EU/UK GDPR consent flow (Google UMP).",
+  tags: [
+    "Flutter",
+    "Dart",
+    "SQLite",
+    "Riverpod",
+    "Android",
+    "Offline-First",
+    "bcrypt",
+  ],
+  images: [
+    "./images/hisab/dashboard.jpeg",
+    "./images/hisab/reports.jpeg",
+    "./images/hisab/add-expense.jpeg",
+    "./images/hisab/security.jpeg",
+    "./images/hisab/categories.jpeg",
+    "./images/hisab/debts.jpeg",
+    "./images/hisab/export.jpeg",
+    "./images/hisab/settings.jpeg",
+  ],
+  links: [
+    { label: "Live ↗", url: "https://hisabapp.github.io" },
+    { label: "Source ↗", url: "https://github.com/Parasraj35/hisab-" }
+  ]
+},
+
 {
   id: "project-1783946907745",
   title: "SkyJourney — Full-Stack Travel Booking Platform",
