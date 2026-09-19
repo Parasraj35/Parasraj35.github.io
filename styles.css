@@ -1,4 +1,4 @@
-  :root{
+  :root, .term-window, .photo-tag{
     --bg: #0D1117;
     --bg-alt: #090C10;
     --card: #161B22;
@@ -16,6 +16,27 @@
     --font-sans: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
+  /* LIGHT THEME — dark is the default; the toggle sets data-theme="light" on <html>.
+     Terminal windows and the photo tag keep the dark palette in both themes (they share the :root block above). */
+  :root[data-theme="light"]{
+    --bg: #F6F8FA;
+    --bg-alt: #ECEFF3;
+    --card: #FFFFFF;
+    --ink: #1F2328;
+    --ink-dim: #4A525C;
+    --ink-faint: #656D76;
+    --line: #D0D7DE;
+    --accent: #1A7F37;
+    --accent-soft: rgba(26,127,55,0.10);
+    --accent-2: #CF222E;
+    --terminal-green: #1A7F37;
+    --terminal-amber: #9A6700;
+    --terminal-blue: #0969DA;
+    --nav-bg: rgba(246,248,250,0.86);
+  }
+  :root[data-theme="light"] .em{text-shadow:none;}
+  :root[data-theme="light"] .hero-terminal{box-shadow:0 24px 60px -24px rgba(31,35,40,0.4);}
+  :root[data-theme="light"] .phone::after{box-shadow:0 30px 50px rgba(31,35,40,0.28);}
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth; scrollbar-color:var(--line) var(--bg);}
   ::-webkit-scrollbar{width:12px; height:12px;}
@@ -38,6 +59,7 @@ nav{
     background:var(--nav-bg);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
+    touch-action:pan-y;
     border-bottom:1px solid var(--line);
 }
 
@@ -99,6 +121,7 @@ nav .wrap{
     font-weight:500;
     flex-wrap:wrap;
     justify-content:flex-end;
+    margin-left:auto;
 }
 
 .navlinks a{
@@ -109,12 +132,63 @@ nav .wrap{
     color:var(--accent);
 }
 
+/* NAV EXTRAS: cursor light + 3D tilt (JS sets --mx/--my and the link transforms) and the theme toggle */
+
+nav::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s ease;
+    background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--accent) 26%, transparent), transparent 70%);
+}
+
+nav.lit::before{opacity:1;}
+
+.logo, .navlinks a, .menu-btn{
+    transition:transform .15s ease-out, color .15s ease;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.theme-btn{
+    width:36px;
+    height:36px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    padding:0;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-dim);
+    cursor:pointer;
+    transition:transform .15s ease-out, color .15s ease, border-color .15s ease;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.theme-btn:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+}
+
+.theme-btn svg{width:18px; height:18px;}
+.theme-btn .icon-moon{display:none;}
+:root[data-theme="light"] .theme-btn .icon-sun{display:none;}
+:root[data-theme="light"] .theme-btn .icon-moon{display:block;}
+
 /* MOBILE */
 
 @media(max-width:819px){
 
 .menu-btn{
 display:block;
+order:2;
+}
+
+.theme-btn{
+order:1;
+margin-left:auto;
 }
 
 .navlinks{
@@ -148,6 +222,25 @@ opacity:1;
 visibility:visible;
 }
 
+.navlinks{
+isolation:isolate;
+}
+
+.navlinks::before{
+content:'';
+position:absolute;
+inset:0;
+z-index:-1;
+pointer-events:none;
+opacity:0;
+transition:opacity .3s ease;
+background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+}
+
+.navlinks.lit::before{
+opacity:1;
+}
+
 }
 
 @media(max-width:380px){
@@ -176,7 +269,7 @@ visibility:visible;
   .social-row a:hover{color:var(--accent); border-color:var(--accent);}
 
   .hero-visual{display:flex; flex-direction:column; gap:20px;}
-  .photo-card{position:relative; border-radius:24px; overflow:hidden; background:var(--accent-soft); aspect-ratio:4/5; border:1px solid var(--line);}
+  .photo-card{position:relative; border-radius:24px; overflow:hidden; background:var(--accent-soft); aspect-ratio:4/5; border:1px solid var(--line); transition:transform .2s ease-out; touch-action:pan-y;}
   .photo-card img{width:100%; height:100%; object-fit:cover;}
   .photo-fallback{width:100%; height:100%; display:none; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:600; font-size:64px; color:var(--accent);}
   .photo-tag{
@@ -463,3 +556,27 @@ visibility:visible;
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;}}
+
+  /* FEATURED PROJECT — 3D PHONE (pure CSS 3D, no library) */
+  .feature{display:grid; grid-template-columns:1fr; gap:32px; align-items:center; margin-bottom:24px; padding:32px; background:var(--card); border:1px solid var(--line); border-radius:20px;}
+  .feature[hidden]{display:none;}
+  @media(min-width:820px){.feature{grid-template-columns:0.8fr 1.2fr; gap:48px;}}
+  .feature-text h3{font-size:clamp(22px,2.6vw,28px); font-weight:600; letter-spacing:-0.01em; margin-bottom:12px;}
+  .feature-text p{color:var(--ink-dim); font-size:15px; max-width:52ch; margin-bottom:22px;}
+  .phone-stage{perspective:1100px; display:flex; justify-content:center; padding:12px 0; touch-action:pan-y;}
+  .phone-sway{transform-style:preserve-3d; animation:phone-sway 9s ease-in-out infinite;}
+  .phone-stage.paused .phone-sway{animation-play-state:paused;}
+  @keyframes phone-sway{0%,100%{transform:rotateY(-22deg) rotateX(3deg);} 50%{transform:rotateY(18deg) rotateX(-2deg);}}
+  .phone{position:relative; width:min(230px,58vw); aspect-ratio:0.468; transform-style:preserve-3d; transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition:transform .15s ease-out;}
+  .phone-screen{position:absolute; inset:0; padding:9px; background:#080b10; border:1px solid #2a323c; border-radius:36px; overflow:hidden;}
+  .phone-screen img{width:100%; height:100%; object-fit:cover; object-position:top; border-radius:28px; transition:opacity .2s ease;}
+  .phone-screen::after{content:''; position:absolute; inset:0; border-radius:36px; background:linear-gradient(115deg, rgba(255,255,255,0.14), transparent 42%); pointer-events:none;}
+  .phone::before, .phone::after{content:''; position:absolute; inset:0; border-radius:36px; border:1px solid #2a323c;}
+  .phone::before{background:#1a2129; transform:translateZ(-8px);}
+  .phone::after{background:#0e1319; transform:translateZ(-16px); box-shadow:0 40px 70px rgba(0,0,0,0.55);}
+  @media(prefers-reduced-motion:reduce){.phone-sway{animation:none; transform:rotateY(-14deg);}}
+
+  /* THEME SWITCH — brief colour fade while toggling (skipped for reduced motion) */
+  @media(prefers-reduced-motion:no-preference){
+    html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after{transition:background-color .3s ease, color .3s ease, border-color .3s ease !important;}
+  }

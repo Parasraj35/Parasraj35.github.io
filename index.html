@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0D1117">
+<meta name="description" content="Paras Raj — Software Engineering student building finance, stock, accounting and booking apps across web and mobile.">
 <title>Paras Raj — Software Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles.css?v=2">
+<link rel="stylesheet" href="./styles.css?v=7">
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 </head>
 <body>
 
@@ -30,15 +32,20 @@
       <a href="#contact">Contact</a>
     </div>
 
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to light theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="badge">Open to internship opportunities</div>
+      <div class="badge">Open to junior roles · Currently interning</div>
       <h1>Software engineer crafting <span class="em">clean</span>, reliable systems.</h1>
-      <p class="hero-sub">Final-year BS Software Engineering student based in Hyderabad, Sindh — focused on Java, object-oriented design, SQL, C++, Data Structures and backend fundamentals.</p>
+      <p class="hero-sub">Final-year BS Software Engineering student based in Hyderabad, Sindh — building finance, stock, accounting and booking apps across web and mobile.</p>
       <div class="social-row">
         <a href="https://github.com/Parasraj35" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/paras-raj-/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -81,9 +88,9 @@
         <div class="term-line cmd" data-text="whoami"></div>
         <div class="term-line out" data-text="paras-raj — final-year software engineer"></div>
         <div class="term-line cmd" data-text="cat focus.txt"></div>
-        <div class="term-line out" data-text="Java · SQL · C++ · OOP · Data Structures"></div>
+        <div class="term-line out" data-text="Flutter · Node.js · PHP · SQL · Java"></div>
         <div class="term-line cmd" data-text="echo $STATUS"></div>
-        <div class="term-line out accent" data-text="open_to_internships"></div>
+        <div class="term-line out accent" data-text="open_to_junior_roles"></div>
       </div>
     </div>
     </div>
@@ -103,11 +110,10 @@
     <h2>A bit about how I work.</h2>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p> <strong>Final-year Software Engineering student</strong>  at SZABIST Hyderabad, focused on Java development and backend fundamentals.</p>
-        <p>Recently built a terminal-based Student Management System applying core OOP concepts (inheritance, encapsulation, ArrayLists) — live on GitHub. 
-          Currently working on a SQL-based Library Management Database as my next project.</p>
-          <p>Skilled in Java, Python, C++, and SQL, with working knowledge of HTML/CSS/JS. Certified in SQL & Relational Databases (IBM) and Prompt Engineering (AWS).</p>
-          <p>Looking for a Java Development / Software Engineering internship where I can apply what I've built and keep growing. Open to remote or on-site opportunities.</p>
+        <p> <strong>Final-year Software Engineering student</strong>  at SZABIST Hyderabad. I build apps where the numbers have to add up — finance, stock, accounting and booking systems — for web (Node.js, PHP, PostgreSQL) and mobile (Flutter).</p>
+        <p>HISAB is an offline-first Android finance app: balance changes are applied inside atomic database transactions, behind a PIN/biometric lock, with installable builds on GitHub Releases. SkyJourney's booking API prices every booking on the server and row-locks seat inventory so the last seat can't be sold twice. 
+          I've also built a Java/JSP accounting system with vouchers and ledgers.</p>
+          <p>Currently doing a 6-week remote internship in AI Automations at DevelopersHub Corporation. Looking for a junior software engineering role (full-stack or mobile) where I can keep shipping real products. Open to remote or on-site.</p>
         </div>
       <div class="academic-card">
         <h3 class="academic-title">Academic</h3>
@@ -118,7 +124,7 @@
         </div>
         <div class="academic-summary">
           <span class="section-tag">Summary</span>
-          <p><strong>Career Objective:</strong> To secure an internship or entry-level role where I can apply my academic knowledge, sharpen my technical skills, and contribute to real software projects.</p>
+          <p><strong>Career Objective:</strong> To secure a junior software engineering role where I can apply my academic knowledge, sharpen my technical skills, and contribute to real software projects.</p>
           <p><strong>Education:</strong> BS Software Engineering — SZABIST Hyderabad (2023–2027)</p>
         </div>
       </div>
@@ -138,15 +144,15 @@
       </div>
       <div class="do-item">
         <div class="do-num">02</div>
-        <div><div class="do-title">Backend Development</div><div class="do-desc">Building application logic in Java and C++ with an emphasis on object-oriented structure — inheritance, encapsulation, and clean class design.</div></div>
+        <div><div class="do-title">Backend Development</div><div class="do-desc">Building server-side logic in Node.js, PHP, and Java — authentication, input validation, and transactional booking and checkout flows.</div></div>
       </div>
       <div class="do-item">
         <div class="do-num">03</div>
-        <div><div class="do-title">Database &amp; SQL</div><div class="do-desc">Designing relational schemas and writing SQL to back real applications, grounded in an IBM-certified foundation in relational databases.</div></div>
+        <div><div class="do-title">Database &amp; SQL</div><div class="do-desc">Designing relational schemas and writing SQL to back real applications, grounded in the IBM SQL and Relational Databases 101 course.</div></div>
       </div>
       <div class="do-item">
         <div class="do-num">04</div>
-        <div><div class="do-title">System Design (CRUD &amp; Menus)</div><div class="do-desc">Structuring full create-read-update-delete workflows behind simple, dependable interfaces — like a console menu that just works.</div></div>
+        <div><div class="do-title">Mobile Development</div><div class="do-desc">Building offline-first Android apps in Flutter — on-device SQLite storage, PIN and biometric lock, and PDF reports.</div></div>
       </div>
     </div>
   </div>
@@ -161,25 +167,25 @@
       <div class="stat-card">
         <div class="info-label">Languages</div>
         <div class="work-tags">
-          <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+          <span class="tag">Dart</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">SQL</span>
         </div>
       </div>
       <div class="stat-card">
-        <div class="info-label">Web &amp; Frameworks</div>
+        <div class="info-label">Web &amp; Mobile</div>
         <div class="work-tags">
-          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">Express</span><span class="tag">PHP</span><span class="tag">Tailwind CSS</span>
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PHP</span><span class="tag">Flutter</span><span class="tag">Riverpod</span>
         </div>
       </div>
       <div class="stat-card">
         <div class="info-label">Databases &amp; APIs</div>
         <div class="work-tags">
-          <span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">JDBC</span><span class="tag">REST APIs</span><span class="tag">JWT Auth</span>
+          <span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">REST APIs</span><span class="tag">JWT Auth</span>
         </div>
       </div>
       <div class="stat-card">
         <div class="info-label">Tools &amp; Concepts</div>
         <div class="work-tags">
-          <span class="tag">Git &amp; GitHub</span><span class="tag">OOP</span><span class="tag">Data Structures</span><span class="tag">Maven</span><span class="tag">JSP</span>
+          <span class="tag">Git &amp; GitHub</span><span class="tag">OOP</span><span class="tag">Flutter Testing</span>
         </div>
       </div>
     </div>
@@ -190,6 +196,21 @@
   <div class="wrap">
     <span class="section-tag">04 — Selected Work</span>
     <h2>Things I've built.</h2>
+    <div class="feature reveal" id="feature" hidden>
+      <div class="phone-stage" id="phone-stage" aria-hidden="true">
+        <div class="phone-sway">
+          <div class="phone" id="phone">
+            <div class="phone-screen"><img id="phone-img" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-text">
+        <span class="section-tag">Featured</span>
+        <h3 id="feature-title"></h3>
+        <p id="feature-desc"></p>
+        <div class="modal-links" id="feature-links"></div>
+      </div>
+    </div>
     <div class="work-grid reveal" id="work-grid"></div>
   </div>
 </section>
@@ -216,7 +237,7 @@
     <div class="contact-split reveal">
       <div class="contact-info-card">
         <h3>Contact Directives</h3>
-        <p class="contact-info-desc">Reach out directly for project inquiries, collaboration, or internship opportunities — I usually reply within a day.</p>
+        <p class="contact-info-desc">Reach out directly for project inquiries, collaboration, or junior developer roles — I usually reply within a day.</p>
 
         <div class="info-row">
           <span class="info-icon">📍</span>
@@ -542,7 +563,6 @@ images: [
   "./images/bella/custom.PNG"
 ],
   links: [
-    { label: "Live ↗", url: "https://essentia-belle-production.up.railway.app/" },
     { label: "Source ↗", url: "https://github.com/Parasraj35/Essentia-Belle" }
   ]
 },
@@ -572,9 +592,9 @@ images: [
   {
     id: "student-manager",
     title: "Student Management System",
-    terminal: "$ java StudentManager\n====================\n1. Add Student\n2. View Students\n3. Update Record\n4. Delete Student\n5. Menu",
-    desc: "A console-based CRUD application built from scratch in Java — full create, read, update, and delete flows behind a persistent do-while menu, structured with inheritance and inner classes.",
-    tags: ["Java", "OOP", "CRUD"],
+    terminal: "$ java StudentManagementSystem\n====================\n1. Add Students\n2. Display All Students\n3. Search Student\n4. Delete Student\n0. Exit",
+    desc: "A console-based student records application built from scratch in Java — add, display, search, and delete flows behind a persistent do-while menu, structured with inheritance and inner classes.",
+    tags: ["Java", "OOP"],
     images: [
       "./images/java/add.PNG",
       "./images/java/Capture.PNG",
@@ -605,10 +625,17 @@ function escapeHtml(str){
   return String(str || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
+function linksHtml(p){
+  return (p.links || []).map((l, idx) =>
+    `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener" class="${idx > 0 ? 'secondary' : ''}">${escapeHtml(l.label)}</a>`
+  ).join('');
+}
+
 function renderWorkGrid(){
   const grid = document.getElementById('work-grid');
   if(!grid) return;
   grid.innerHTML = PROJECTS.map((p, i) => {
+    if(p === featured) return '';
     const tags = (p.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
     const images = p.images || [];
     const thumb = images.length
@@ -669,9 +696,7 @@ function openProject(i){
   document.getElementById('project-modal-title').textContent = p.title;
   document.getElementById('project-modal-desc').textContent = p.desc || '';
   document.getElementById('project-modal-tags').innerHTML = (p.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
-  document.getElementById('project-modal-links').innerHTML = (p.links || []).map((l, idx) =>
-    `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener" class="${idx > 0 ? 'secondary' : ''}">${escapeHtml(l.label)}</a>`
-  ).join('') || '';
+  document.getElementById('project-modal-links').innerHTML = linksHtml(p);
   document.getElementById('project-carousel').classList.toggle('is-mobile', !!p.mobile);
   buildCarousel(p.images);
   document.getElementById('project-modal').classList.add('open');
@@ -703,6 +728,111 @@ function closeModals(){
 
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModals(); });
 
+/* ---------- 3D: featured phone (first mobile project) + hero photo tilt ---------- */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let featured = null;
+
+// pointer position inside `el` -> [rotateX, rotateY] in degrees
+function tiltFromPointer(el, e, maxX, maxY){
+  const r = el.getBoundingClientRect();
+  return [((e.clientY - r.top) / r.height - 0.5) * -maxX, ((e.clientX - r.left) / r.width - 0.5) * maxY];
+}
+
+// tilt toward the mouse or a fingertip while `el` is hovered / pressed: set(rx, ry) applies it, set() clears it.
+// (touch-action:pan-y in the CSS keeps sideways drags with us while up-down drags still scroll the page)
+// `ok` is optional and can switch the tilt off, e.g. for the full-width rows of the phone menu.
+function tiltOnPointer(el, maxX, maxY, set, ok){
+  const tilt = e => { if(!ok || ok()) set(...tiltFromPointer(el, e, maxX, maxY)); };
+  ['pointerdown', 'pointermove'].forEach(t => el.addEventListener(t, tilt));
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach(t => el.addEventListener(t, () => set()));
+}
+
+function initFeature(){
+  const box = document.getElementById('feature');
+  const p = PROJECTS.find(x => x.mobile && (x.images || []).length);
+  if(!box || !p) return;
+  featured = p;
+  const shots = p.images;
+  const stage = document.getElementById('phone-stage');
+  const phone = document.getElementById('phone');
+  const img = document.getElementById('phone-img');
+  document.getElementById('feature-title').textContent = p.title;
+  document.getElementById('feature-desc').textContent = (p.desc || '').split(' • ')[0];
+  document.getElementById('feature-links').innerHTML = linksHtml(p);
+  img.src = shots[0];
+  box.hidden = false;
+  if(reduceMotion) return;
+
+  let n = 0, visible = true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; stage.classList.toggle('paused', !visible); }, { threshold: 0.2 }).observe(box);
+  }
+  setInterval(() => {
+    if(!visible || shots.length < 2) return;
+    n = (n + 1) % shots.length;
+    const next = new Image();
+    next.onload = () => { img.style.opacity = 0; setTimeout(() => { img.src = shots[n]; img.style.opacity = 1; }, 200); };
+    next.src = shots[n];
+  }, 3500);
+
+  tiltOnPointer(stage, 16, 24, (rx = 0, ry = 0) => {
+    phone.style.setProperty('--rx', rx + 'deg');
+    phone.style.setProperty('--ry', ry + 'deg');
+  });
+}
+
+const photoCard = document.querySelector('.photo-card');
+if(photoCard && !reduceMotion){
+  tiltOnPointer(photoCard, 10, 10, (rx, ry) => {
+    photoCard.style.transform = rx === undefined ? '' : `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+}
+
+/* ---------- THEME: dark by default, light on click (choice is remembered) ---------- */
+const themeBtn = document.getElementById('theme-btn');
+function applyTheme(light){
+  const root = document.documentElement;
+  if(light) root.dataset.theme = 'light'; else delete root.dataset.theme;
+  document.querySelector('meta[name="theme-color"]').content = getComputedStyle(root).getPropertyValue('--bg').trim();
+  themeBtn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+}
+applyTheme(document.documentElement.dataset.theme === 'light');
+themeBtn.addEventListener('click', () => {
+  const light = document.documentElement.dataset.theme !== 'light';
+  document.documentElement.classList.add('theme-anim');
+  applyTheme(light);
+  try{ localStorage.setItem('theme', light ? 'light' : 'dark'); }catch(e){}
+  setTimeout(() => document.documentElement.classList.remove('theme-anim'), 350);
+});
+
+/* ---------- NAV: light follows the mouse or fingertip + 3D press-tilt (skipped for reduced motion) ---------- */
+if(!reduceMotion){
+  const nav = document.querySelector('nav');
+  const wide = window.matchMedia('(min-width: 820px)');
+
+  // adds .lit while a mouse is over / a finger is on `el`, and keeps --mx/--my at the pointer for the CSS glow
+  function trackLight(el){
+    const follow = e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    };
+    el.addEventListener('pointerenter', e => { follow(e); el.classList.add('lit'); });
+    ['pointerdown', 'pointermove'].forEach(t => el.addEventListener(t, follow));
+    ['pointerleave', 'pointercancel'].forEach(t => el.addEventListener(t, () => el.classList.remove('lit')));
+  }
+  trackLight(nav);
+  trackLight(document.getElementById('navlinks'));
+
+  // tilt toward the pointer / fingertip; the full-width rows of the phone menu stay flat
+  nav.querySelectorAll('.logo, .navlinks a, .theme-btn, .menu-btn').forEach(el => {
+    tiltOnPointer(el, 28, 28, (rx, ry) => {
+      el.style.transform = rx === undefined ? '' : `perspective(260px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+    }, () => !el.matches('.navlinks a') || wide.matches);
+  });
+}
+
+initFeature();
 renderWorkGrid();
 
 const heroProjectStat = document.getElementById('hero-stat-projects');
@@ -711,7 +841,6 @@ if(heroProjectStat) heroProjectStat.textContent = PROJECTS.length + '+';
 function typeHeroTerminal(){
   const lines = document.querySelectorAll('#hero-terminal-body .term-line');
   if(!lines.length) return;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduceMotion){
     lines.forEach(el => { el.textContent = el.dataset.text || ''; });
     const cursor = document.createElement('span');

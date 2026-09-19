@@ -1,2 +1,2 @@
 # Portfolio
-Personal portfolio — Software Engineering student specializing in Java, OOP, and backend development.
+Personal portfolio — Software Engineering student building finance, stock, accounting and booking apps across web and mobile.
